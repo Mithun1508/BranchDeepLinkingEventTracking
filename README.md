@@ -43,7 +43,7 @@ Implementation Notes: Branch SDK is employed to create shareable links, and any 
 
 # How to Run the App
 
-1.Clone the repository: git clone https://github.com/yourusername/BranchDeepLinkingSampleApp.git
+1.Clone the repository: git clone https://github.com/Mithun1508/BranchDeepLinkingSampleApp.git
 
 2.Open the project in Android Studio.
 
