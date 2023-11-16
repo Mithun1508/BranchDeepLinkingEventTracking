@@ -7,19 +7,17 @@ Welcome to the BranchDeepLinkingSampleApp! This Android app showcases the implem
 # 1. Deep Linking
 The app leverages Branch's Deep Linking technology to seamlessly direct users to specific locations within the app.
 
-Implementation Notes: Utilizing the Branch Android SDK, the app reads data associated with Branch Links, ensuring smooth navigation to targeted in-app content.
 
 # 2. Event Tracking
 Users can trigger custom events using the Branch SDK within the app.
 
 Events are tracked on the Branch dashboard for comprehensive analytics.
 
-Implementation Notes: The Branch SDK is integrated to efficiently track and report events. Any related design considerations, such as event naming conventions, are documented.
 
 # 3. Shareable Branch Links
 The app empowers users to generate shareable Branch links directly from within the application using the Branch SDK.
 
-Implementation Notes: Branch SDK is employed to create shareable links, and any relevant considerations, like link format or metadata, are documented.
+
 
 ## Nice to Have
 1.Generate Events Using Branch API
