@@ -7,30 +7,48 @@ Welcome to the BranchDeepLinkingSampleApp! This Android app showcases the implem
 # 1. Deep Linking
 The app leverages Branch's Deep Linking technology to seamlessly direct users to specific locations within the app.
 
+a) Integrate Branch SDK:
+
+Add the Branch SDK to your Android project using a dependency management system like Gradle.
+
+Initialize the SDK in your application's onCreate method.
+
+b) Configure Deep Linking:
+
+Set up deep linking in your app by specifying the activity and/or fragment that should handle the deep link.
+
+Extract data from the Branch Link in the deep linking handler.
 
 # 2. Event Tracking
-Users can trigger custom events using the Branch SDK within the app.
 
-Events are tracked on the Branch dashboard for comprehensive analytics.
+1. Use the Branch SDK to trigger events within your app. For example, you might trigger an event when a user completes a specific action.
+Track Events on Dashboard:
+
+2. Events triggered using the Branch SDK will be automatically tracked on the Branch dashboard.
 
 
 # 3. Shareable Branch Links
 The app empowers users to generate shareable Branch links directly from within the application using the Branch SDK.
 
 
-
 ## Nice to Have
-1.Generate Events Using Branch API
+ Capture Revenue Values for Commerce Events and Display on Dashboard
+ 
+ ## Integrate Revenue Tracking:
+1.Use the Branch SDK to capture revenue values for specific commerce events in your app.
 
-2.Users can generate events for the app programmatically using the Branch API.
+2.These revenue values will be displayed on the Branch dashboard.
 
-3.Implementation Notes: The app integrates with the Branch API to facilitate event generation. Details on API endpoints and data payloads are documented.
+## Additional Considerations:
 
-4.Revenue Capture for Commerce Events
+# Configuration on Branch Dashboard:
+Configure your app on the Branch dashboard, including setting up deep linking parameters, events, and other relevant settings.
 
-4.The app captures revenue values for Commerce Events and displays them on the Branch dashboard.
+# Publishing the App:
+ Use Google Drive or DropBox to host your app's APK (Android) or IPA (iOS) file and use this as the custom URL for your app on the Branch dashboard's Configuration page.
 
-5.Implementation Notes: Utilizing the Branch SDK, the app captures revenue data associated with Commerce Events. The integration process and how this information is presented on the dashboard are documented.
+# Testing:
+Thoroughly test deep linking, event tracking, and link creation on both Android and iOS devices to ensure a seamless user experience.
 
 ## Technologies Used
 1.Android SDK
