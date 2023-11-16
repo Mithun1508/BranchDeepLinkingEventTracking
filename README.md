@@ -74,7 +74,7 @@ Thoroughly test deep linking, event tracking, and link creation on both Android 
 7.Add the custom URL from Google Drive or DropBox to the Configuration page on the Branch dashboard.
 
 ## Live Demo
-[Optional: Add a link to a live demo if available.]
+ https://fd26s.test-app/
 
 ## Contributing
 We welcome contributions! Please follow these steps:
