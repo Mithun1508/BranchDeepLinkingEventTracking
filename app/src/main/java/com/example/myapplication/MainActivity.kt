@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launcher)
 
-        // Your existing code...
 
+        // Handle incoming deep links
         val intent: Intent = intent
         val deepLinkUri: Uri? = intent.data
 
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             // Handle the deep link, extract information, and navigate accordingly
             val path: String? = deepLinkUri.path
 
-            // Example: Check the path and navigate based on the deep link
+            // Handle different paths in the deep link
             when (path) {
                 "/page1" -> {
                     // Handle deep link for "/page1"
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 "/page2" -> {
-                    // Handle deep link for "/page2"
+                    //  Handle specific deep link paths
                     // You can implement specific logic or just launch LauncherActivity
                     startActivity(Intent(this, LauncherActivity::class.java))
                     finish()
@@ -65,10 +65,12 @@ class MainActivity : AppCompatActivity() {
 
     // Existing functions...
 
+    //Function to create and share a Branch link
     private fun createAndShareBranchLink() {
         val buo = createBranchUniversalObject()
         val lp = createLinkProperties()
 
+        // Generate a short Branch link and share it
         buo.generateShortUrl(this, lp, Branch.BranchLinkCreateListener() { url, error ->
             if (error == null) {
                 Log.i("BRANCH SDK", "got my Branch link to share: $url")
@@ -77,6 +79,8 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+
+    // Function to share a Branch link
     private fun shareBranchLink(url: String?) {
         val buo = createBranchUniversalObject()
         val lp = createLinkProperties()
@@ -90,6 +94,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    // Function to read deep link data
     private fun readDeepLinkData() {
         Branch.sessionBuilder(this).withCallback(object : BranchReferralInitListener {
             override fun onInitFinished(referringParams: JSONObject?, error: BranchError?) {
@@ -101,7 +106,7 @@ class MainActivity : AppCompatActivity() {
             }
         }).withData(intent.data).init()
 
-        // latest
+        // Retrieve the latest and first referring params
         val sessionParams = Branch.getInstance().latestReferringParams
 
         // first

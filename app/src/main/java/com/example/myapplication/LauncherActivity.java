@@ -23,12 +23,15 @@ public class LauncherActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        // Initialize Branch SDK on activity start
         Branch.sessionBuilder(this).withCallback(new Branch.BranchUniversalReferralInitListener() {
             @Override
             public void onInitFinished(BranchUniversalObject branchUniversalObject, LinkProperties linkProperties, BranchError error) {
                 if (error != null) {
                     Log.e("BranchSDK_Tester", "branch init failed. Caused by -" + error.getMessage());
                 } else {
+                    // Log information about successful initialization
                     Log.i("BranchSDK_Tester", "branch init complete!");
                     if (branchUniversalObject != null) {
                         Log.i("BranchSDK_Tester", "title " + branchUniversalObject.getTitle());
@@ -49,7 +52,9 @@ public class LauncherActivity extends AppCompatActivity {
     public void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         this.setIntent(intent);
+        // Check for a special flag indicating the need for a new Branch session
         if (intent != null && intent.hasExtra("branch_force_new_session") && intent.getBooleanExtra("branch_force_new_session",false)) {
+            // Reinitialize the Branch session to force a new session
             Branch.sessionBuilder(this).withCallback(new Branch.BranchReferralInitListener() {
                 @Override
                 public void onInitFinished(JSONObject referringParams, BranchError error) {
